@@ -146,7 +146,7 @@ enterCredentials:
 		default:
 			fmt.Println("Incorrect Choice Entered, Please Enter a Valid Choice")
 		}
-
+	ContinueChoice:
 		fmt.Println("\nDo You Want To Continue:(Y/N):")
 		cont, err := scanner.ReadString('\n')
 		cont = strings.TrimSpace(cont)
@@ -155,9 +155,12 @@ enterCredentials:
 		} else {
 			if cont == "Y" || cont == "y" {
 				continue
-			} else {
+			} else if cont == "n" || cont == "N" {
 				fmt.Println("Thank You, Please Remove Your Card")
 				os.Exit(1)
+			} else {
+				fmt.Println("Enter Valid Choice")
+				goto ContinueChoice
 			}
 		}
 	}
