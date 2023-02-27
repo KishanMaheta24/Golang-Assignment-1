@@ -64,15 +64,17 @@ enterCredentials:
 		fmt.Println("Wrong Password")
 		goto enterCredentials
 	} else if status == "NAP" {
-		//fmt.Println("panicking")
 		fmt.Println("No Such Account Found")
 		goto enterCredentials
+	} else {
+		fmt.Printf("Welcome,%s...!\n", credentials.UserName)
 	}
 
 	for {
-	Choice:
+
 		fmt.Println()
-		fmt.Printf("Welcome,%s...!\n", credentials.UserName)
+
+	Choice:
 		fmt.Println("===================")
 		fmt.Println("Enter 1 to Check Balance")
 		fmt.Println("Enter 2 to Deposit")
@@ -116,7 +118,7 @@ enterCredentials:
 			fmt.Println("Thank you... Have a good day")
 			os.Exit(1)
 		default:
-			fmt.Println("asd")
+			fmt.Println("Incorrect Choice Entered, Please Enter a Valid Choice")
 		}
 
 	}
