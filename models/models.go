@@ -40,7 +40,7 @@ func DepositMoney(obj *UserDetails, ToBeDeposit string) {
 	if err != nil && err1 == nil {
 		fmt.Println("Cannot enter amount in Float Values,Please Enter Whole values only!")
 	} else if err != nil {
-		fmt.Println("error Occured:", err)
+		fmt.Println("error Occured: Please enter Valid Amount")
 	} else if deposit < 0 {
 		fmt.Println("Please enter valid amount")
 	} else if (deposit % 500) != 0 {
@@ -63,7 +63,7 @@ func WithdrawMoney(obj *UserDetails, ToBeWithdrawn string) {
 	if err != nil && err1 == nil {
 		fmt.Println("Cannot enter amount in Float Values,Please Enter Whole values only!")
 	} else if err != nil {
-		fmt.Println("error Occured:", err)
+		fmt.Println("error Occured:", "Please enter Valid Amount")
 	} else if withdraw < 0 {
 		fmt.Println("Please enter valid amount")
 	} else if withdraw%500 != 0 {
